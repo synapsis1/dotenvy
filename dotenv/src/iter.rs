@@ -22,9 +22,10 @@ impl<R: Read> Iter<R> {
     pub fn load(self) -> Result<()> {
         for item in self {
             let (key, value) = item?;
-            if env::var(&key).is_err() {
-                env::set_var(&key, value);
-            }
+            // override existing variables
+            //       if env::var(&key).is_err() {
+            env::set_var(&key, value);
+            //       }
         }
 
         Ok(())
