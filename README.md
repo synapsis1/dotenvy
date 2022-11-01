@@ -1,11 +1,14 @@
 # dotenvy
 
-[![crates.io](https://img.shields.io/crates/v/dotenvy.svg)](https://crates.io/crates/dotenvy)
-![CI](https://github.com/allan2/dotenvy/workflows/CI/badge.svg)
-[![Released API docs](https://docs.rs/dotenvy/badge.svg)](https://docs.rs/dotenvy)
-[![codecov](https://codecov.io/gh/allan2/dotenvy/branch/master/graph/badge.svg)](https://codecov.io/gh/allan2/dotenvy)
+[![Crates.io](https://img.shields.io/crates/v/dotenvy.svg)](https://crates.io/crates/dotenvy)
+[![msrv
+1.58.1](https://img.shields.io/badge/msrv-1.58.1-dea584.svg?logo=rust)](https://github.com/rust-lang/rust/releases/tag/1.58.1)
+[![ci](https://github.com/allan2/dotenvy/actions/workflows/ci.yml/badge.svg)](https://github.com/allan2/dotenvy/actions/workflows/ci.yml)
+[![docs](https://img.shields.io/docsrs/dotenvy?logo=docs.rs)](https://docs.rs/dotenvy/)
 
 A well-maintained fork of the [dotenv](https://github.com/dotenv-rs/dotenv) crate.
+
+This crate is the suggested alternative for `dotenv` in security advisory [RUSTSEC-2021-0141](https://rustsec.org/advisories/RUSTSEC-2021-0141.html).
 
 This library loads environment variables from a _.env_ file. This is convenient for dev environments.
 
@@ -43,7 +46,7 @@ Warning: there is an outstanding issue with rust-analyzer ([rust-analyzer #9606]
 
 The original dotenv crate has not been updated since June 26, 2020. Attempts to reach the authors and present maintainer were not successful ([dotenv-rs/dotenv #74](https://github.com/dotenv-rs/dotenv/issues/74)).
 
-This fork is intended to serve as the development home for the dotenv implementation in Rust.
+This fork intends to serve as the development home for the dotenv implementation in Rust.
 
 ## What are the differences from the original?
 
@@ -53,6 +56,7 @@ This repo fixes:
 - more helpful errors for `dotenv!` ([dotenv-rs/dotenv #57](https://github.com/dotenv-rs/dotenv/pull/57))
 
 It also adds:
+
 - multiline support for environment variable values
 - `io::Read` support via [`from_read`](https://docs.rs/dotenvy/latest/dotenvy/fn.from_read.html) and [`from_read_iter`](https://docs.rs/dotenvy/latest/dotenvy/fn.from_read_iter.html)
 - improved docs
